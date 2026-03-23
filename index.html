@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bosinn Elite Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="telegram-block" class="telegram-block hidden"></div>
+    <div id="game-container" class="container">
+        <header class="game-header">
+            <div class="bosinn-title">
+                <img id="bosinn-avatar" src="bosinn_cheap.png" alt="Bosinn" class="bosinn-avatar">
+                <h1 id="bosinn-name">Новичок Босинн</h1>
+            </div>
+            <div class="user-info">
+                <span id="username-display">Игрок</span>
+            </div>
+        </header>
+
+        <main class="game-main">
+            <div class="game-stats">
+                <div class="tokens-display">
+                    <span class="tokens-label">Босинн Токены:</span>
+                    <span id="tokens-count">0</span>
+                </div>
+                <div class="rebirth-display">
+                    <span class="rebirth-label">Перерождение:</span>
+                    <span id="rebirth-level">0</span>/5
+                </div>
+            </div>
+
+            <div class="click-area">
+                <button id="click-btn" class="click-button">
+                    <img id="click-image" src="bosinn_cheap.png" alt="Click Bosinn" class="click-image">
+                    <div class="click-text">КЛИКАЙ!</div>
+                </button>
+                <div id="click-effect" class="click-effect"></div>
+            </div>
+
+            <div class="game-tabs">
+                <button id="upgrades-tab" class="game-tab-btn active">Улучшения</button>
+                <button id="rebirth-tab" class="game-tab-btn">Перерождение</button>
+            </div>
+
+            <div id="upgrades-panel" class="game-panel">
+                <div class="upgrade-item">
+                    <div class="upgrade-info">
+                        <h3>Сила клика</h3>
+                        <p>+1 токен за клик</p>
+                        <span class="upgrade-level">Уровень: <span id="click-power-level">1</span></span>
+                    </div>
+                    <button id="buy-click-power" class="upgrade-btn">
+                        Купить (<span id="click-power-cost">10</span> токенов)
+                    </button>
+                </div>
+
+                <div class="upgrade-item">
+                    <div class="upgrade-info">
+                        <h3>Авто-кликер</h3>
+                        <p>Автоматически кликает за вас</p>
+                        <span class="upgrade-level">Уровень: <span id="auto-clicker-level">0</span></span>
+                    </div>
+                    <button id="buy-auto-clicker" class="upgrade-btn">
+                        Купить (<span id="auto-clicker-cost">100</span> токенов)
+                    </button>
+                </div>
+            </div>
+
+            <div id="rebirth-panel" class="game-panel hidden">
+                <div class="rebirth-info">
+                    <h2>Перерождение Босинна</h2>
+                    <p>Сбросьте прогресс, но получите постоянные бонусы!</p>
+                    <div class="rebirth-benefits">
+                        <p>Текущий уровень: <span id="current-rebirth">0</span>/5</p>
+                        <p>Следующий бонус: +<span id="next-multiplier">2</span>x множитель</p>
+                        <p>Стоимость: <span id="rebirth-cost">10,000</span> токенов</p>
+                    </div>
+                    <button id="rebirth-btn" class="rebirth-button">
+                        ПЕРЕРОДИТЬСЯ
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

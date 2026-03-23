@@ -1,0 +1,16 @@
+# Render.com configuration file
+services:
+  - type: web
+    name: bosinn-clicker
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: STRICT_TELEGRAM_MODE
+        value: true
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
